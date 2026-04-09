@@ -11,7 +11,7 @@
   --color-primary: #111111;
   --color-primary-light: #1a1a1a;
   --color-accent: #8b2635;
-  --color-accent-light: #a33344;
+  --color-accent-light: #9f4f5d;
   --color-text: #1a1a1a;
   --color-text-secondary: #555555;
   --color-text-muted: #888888;
@@ -35,7 +35,7 @@
 }
 
 ::selection {
-  background: var(--color-accent);
+  background: var(--color-accent-light);
   color: var(--color-white);
 }
 
@@ -259,20 +259,21 @@ p:last-child {
   background: currentColor;
   border-radius: 0;
   transition: transform var(--duration-nav) var(--ease-fluid),
-    opacity var(--duration-nav) var(--ease-fluid);
+    opacity calc(var(--duration-nav) * 0.4) ease;
   transform-origin: center;
 }
 
 .mobile-toggle[aria-expanded='true'] .bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg) scaleX(0.72);
 }
 
 .mobile-toggle[aria-expanded='true'] .bar:nth-child(2) {
   opacity: 0;
+  transform: scaleX(0);
 }
 
 .mobile-toggle[aria-expanded='true'] .bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg) scaleX(0.72);
 }
 
 .mobile-nav {
