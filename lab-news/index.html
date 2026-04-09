@@ -159,7 +159,14 @@
       var nav = document.getElementById('mobile-nav');
       if (!toggle || !nav) return;
 
+      function updateBlobOrigin() {
+        var rect = toggle.getBoundingClientRect();
+        nav.style.setProperty('--blob-x', (rect.left + rect.width / 2) + 'px');
+        nav.style.setProperty('--blob-y', (rect.top + rect.height / 2) + 'px');
+      }
+
       function setNavOpen(open) {
+        if (open) updateBlobOrigin();
         nav.classList.toggle('open', open);
         document.body.classList.toggle('nav-open', open);
         toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
