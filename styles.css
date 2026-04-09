@@ -440,12 +440,28 @@ p:last-child {
   color: var(--color-text-muted);
   letter-spacing: 0.02em;
   white-space: nowrap;
-  padding-bottom: 4px;
+  padding-bottom: 2px;
+  position: relative;
   transition: color 0.2s ease;
+}
+
+.view-all-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-primary);
+  transition: width 0.3s var(--ease-fluid);
 }
 
 .view-all-link:hover {
   color: var(--color-primary);
+}
+
+.view-all-link:hover::after {
+  width: 100%;
 }
 
 .hero--page {
@@ -852,6 +868,23 @@ p:last-child {
 
 .news-body a {
   font-weight: 500;
+  position: relative;
+  padding-bottom: 1px;
+}
+
+.news-body a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-accent);
+  transition: width 0.3s var(--ease-fluid);
+}
+
+.news-body a:hover::after {
+  width: 100%;
 }
 
 /* ===== CONTACT ===== */
@@ -881,10 +914,27 @@ p:last-child {
   font-weight: 400;
   color: var(--color-accent);
   margin: 24px 0 48px;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.contact-email::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-accent);
+  transition: width 0.3s var(--ease-fluid);
 }
 
 .contact-email:hover {
-  color: var(--color-accent-light);
+  color: var(--color-accent);
+}
+
+.contact-email:hover::after {
+  width: 100%;
 }
 
 .contact-image {
