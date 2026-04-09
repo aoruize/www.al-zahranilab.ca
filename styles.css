@@ -470,6 +470,7 @@ p:last-child {
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  background: var(--color-white);
 }
 
 .pillar-img {
@@ -552,12 +553,12 @@ p:last-child {
 
 .research-card-number {
   display: inline-block;
-  font-family: var(--font-body);
+  font-family: var(--font-mono);
   font-size: 0.6875rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-text-muted);
+  color: var(--color-accent);
   margin-bottom: 20px;
 }
 
@@ -937,6 +938,7 @@ p:last-child {
   font-size: 0.8125rem;
   font-weight: 400;
   letter-spacing: 0.02em;
+  white-space: nowrap;
   transition: color 0.2s ease;
 }
 
@@ -1014,6 +1016,14 @@ p:last-child {
   .science-pillars {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .pillar-img {
+    width: 60%;
+    max-width: 280px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    background: var(--color-white);
   }
 
   .contact-grid {
@@ -1117,7 +1127,7 @@ p:last-child {
 
   .footer-nav {
     flex-wrap: wrap;
-    gap: 16px;
+    gap: 12px 20px;
   }
 
   .news-item {
