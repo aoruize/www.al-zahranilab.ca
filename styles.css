@@ -768,24 +768,46 @@ p:last-child {
 
 .pub-link {
   display: inline-flex;
+  align-self: flex-start;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--color-accent);
   letter-spacing: 0.02em;
   margin-top: 4px;
-  transition: color 0.2s ease;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.pub-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1.5px;
+  background: var(--color-accent);
+  transition: width 0.3s var(--ease-fluid);
+}
+
+.pub-link:hover::after {
+  width: 100%;
 }
 
 .pub-link:hover {
-  color: var(--color-accent-light);
+  color: var(--color-accent);
 }
 
 .pub-link svg {
   width: 14px;
   height: 14px;
+  transition: transform 0.3s var(--ease-fluid);
+}
+
+.pub-link:hover svg {
+  transform: translateX(2px);
 }
 
 /* ===== NEWS TIMELINE ===== */
