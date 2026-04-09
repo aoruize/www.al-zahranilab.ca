@@ -490,10 +490,12 @@ p:last-child {
 }
 
 .pillar-img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
+  width: 90%;
+  max-width: 350px;
+  aspect-ratio: 1;
   object-fit: contain;
   background: var(--color-white);
+  margin: 0 auto;
   padding: 16px;
 }
 
@@ -1086,16 +1088,8 @@ p:last-child {
   }
 
   .science-pillars {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 24px;
-  }
-
-  .pillar-img {
-    width: 60%;
-    max-width: 280px;
-    margin: 0 auto;
-    aspect-ratio: 1;
-    background: var(--color-white);
   }
 
   .contact-grid {
@@ -1180,6 +1174,19 @@ p:last-child {
 
   .team-photo {
     max-width: 320px;
+  }
+
+  .science-pillars {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pillar-img {
+    width: 90%;
+    max-width: 350px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+    background: var(--color-white);
   }
 
   .pets-grid {
