@@ -394,7 +394,7 @@ p:last-child {
 }
 
 .hero--page {
-  min-height: 340px;
+  min-height: 420px;
   align-items: flex-end;
 }
 
@@ -1019,7 +1019,7 @@ p:last-child {
   }
 
   .hero--page {
-    min-height: 280px;
+    min-height: 340px;
   }
 
   .hero-content {
