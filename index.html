@@ -29,7 +29,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+      <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -50,7 +50,7 @@
   <!-- Hero -->
   <section class="hero hero--tall">
     <div class="hero-bg">
-      <img src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/44daf1cc-4122-43d6-bdf8-e9f861ae9300/Whiteboard+Mouse.jpeg" alt="Lab whiteboard with research notes">
+      <img src="images/donnelly-centre.jpg" alt="Donnelly Centre for Cellular and Biomolecular Research and CN Tower">
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
@@ -59,46 +59,102 @@
     </div>
   </section>
 
+  <!-- Featured Image -->
+  <div class="featured-image-section">
+    <img src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/44daf1cc-4122-43d6-bdf8-e9f861ae9300/Whiteboard+Mouse.jpeg" alt="Lab whiteboard with research notes and mouse model">
+  </div>
+
   <!-- Our Science -->
   <section class="section">
     <div class="container">
-      <div class="section-header text-center">
-        <span class="section-label">What We Do</span>
+      <div class="section-header">
+        <span class="section-label">Research Focus</span>
         <h2 class="section-title">Our Science</h2>
         <p class="section-subtitle">
-          Our lab aims to develop and apply new high-throughput <em>in vivo</em> functional genomics tools to study how large-scale chromosomal alterations drive tumourigenesis and can be leveraged as a therapeutic vulnerability in cancer.
+          We develop and apply high-throughput <em>in vivo</em> functional genomics tools to study how large-scale chromosomal alterations drive tumourigenesis and can be leveraged as a therapeutic vulnerability in cancer.
         </p>
       </div>
 
       <div class="science-pillars">
         <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5"/>
-            </svg>
-          </div>
-          <h3 class="pillar-title">Creating New Functional Genomics Tools</h3>
+          <img class="pillar-img" src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/a7c92c98-5ef6-4cf8-9d84-8d4dc49ee2ee/Screenshot+2026-04-01+at+3.48.09%E2%80%AFPM.png" alt="Functional genomics tools diagram">
+          <h3 class="pillar-title">Functional Genomics Tools</h3>
           <p class="pillar-text">Developing CRISPR-based multiplexing approaches to study the causes and consequences of genetic and transcriptional heterogeneity in cancer.</p>
         </div>
 
         <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/>
-            </svg>
-          </div>
-          <h3 class="pillar-title">Developing Mouse Models of Disease</h3>
+          <img class="pillar-img" src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/b462d5ed-02b2-4a27-8093-233b7d4d7977/Screenshot+2026-03-23+at+5.15.48%E2%80%AFPM.png" alt="Mouse models diagram">
+          <h3 class="pillar-title">Mouse Models of Disease</h3>
           <p class="pillar-text">Building new mouse models of cancer amenable to functional interrogation through direct <em>in vivo</em> genetic manipulation of cells within their native environment.</p>
         </div>
 
         <div class="pillar-card">
-          <div class="pillar-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6"/>
-            </svg>
-          </div>
-          <h3 class="pillar-title">Investigating How Aneuploidy Drives Cancer</h3>
+          <img class="pillar-img" src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/0abecdf4-8f16-46a6-b78c-51b5939ad213/Screenshot+2026-04-06+at+4.56.10%E2%80%AFPM.png" alt="Aneuploidy and cancer diagram">
+          <h3 class="pillar-title">Aneuploidy in Cancer</h3>
           <p class="pillar-text">Combining functional genomics tools with mouse models to investigate how chromosomal and transcriptional heterogeneities drive cancer and can be targeted therapeutically.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Recent Publications -->
+  <section class="section section--alt">
+    <div class="container container--narrow">
+      <div class="section-header-row">
+        <div class="section-header">
+          <span class="section-label">Selected Work</span>
+          <h2 class="section-title">Recent Publications</h2>
+        </div>
+        <a href="publications.html" class="view-all-link">View all publications &rarr;</a>
+      </div>
+
+      <div class="pub-list">
+        <div class="pub-item">
+          <span class="pub-number">25</span>
+          <div class="pub-content">
+            <p class="pub-authors">
+              <strong>Al-Zahrani KN*</strong>, Langille ER, Nurtanto J, Obersterescu A, Teng K, Lowden C, Dessapt J, Chiu CH, Caldwell LV, Cook DP, P&eacute;rez-Castro MA, Berman JM, Tsai R, Bahcheli AT, Mbamalu G, Wu S, Narimatsu M, Lopes AG, Fotiadou I, Chan K, Zhang L, Bang KWA, Parsons MJ, Mourao L, Temel EI, McCulla L, Palavalasa S, Borowsky AD, Scheele CLGJ, Wahl DR, Jackson HW, Stewart KS, Fuchs E, Egan SE, Pujana MA, Reimand J, Wrana JL, and Schramek D*.
+              <span class="pub-title">Aneuploidy selects for the acquisition of driver genes in breast cancer.</span>
+              (Preprint available at Research Square).
+              <span class="pub-year">2026.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-number">24</span>
+          <div class="pub-content">
+            <p class="pub-authors">
+              Aynaud MM, Caldwell L, <strong>Al-Zahrani KN</strong>, Bartucu S, Chan K, Obersterescu A, Ogunjimi AA, Zakoor K-R, Patel S, Padilla R, Jen M, Veniegas PM, Dewsi N, Yonathan F, Zhang L, Ayson-Fortunato A, Aquino A, Krzyzanowski P, Simpson J, Bartlett J, Lungu I, Wouters BG, Rini JM, Gekas M, Poutanen S, Pelletier L, Mazzulli T, and Wrana JL.
+              <span class="pub-title">Systematic surveillance of SARS-CoV-2 reveals dynamics of variant mutagenesis and transmission in a large urban population.</span>
+              <span class="pub-journal">Nature Communications.</span>
+              <span class="pub-year">2024.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-number">21</span>
+          <div class="pub-content">
+            <p class="pub-authors">
+              Martinez S, Wu S, Geuenich M, Malik A, Weber R, Woo T, Zhang A, Jang GH, Dervovic D, <strong>Al-Zahrani KN</strong>, Tsai R, Fodil N, Gros P, Gallinger S, Neely GG, Notta F, Sendoel A, Campbell K, Elling U, and Schramek D.
+              <span class="pub-title">In vivo CRISPR screens reveal SCAF1 and USP15 as drivers of pancreatic cancer.</span>
+              <span class="pub-journal">Nature Communications.</span>
+              <span class="pub-year">2024.</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="pub-item">
+          <span class="pub-number">20</span>
+          <div class="pub-content">
+            <p class="pub-authors">
+              L&uuml; Y, Cho S, Mukherjee S, Suarez CF, Gonzalez-Foutel NS, Malik A, Martinez S, Dervovic D, Oh RH, Langille E, <strong>Al-Zahrani KN</strong>, Hoeg L, Lin ZY, Tsai R, Mbamalu G, Rotter V, Ashton-Prolla P, Moffat J, Chemes LB, Gingras A-C, Oren M, Durocher D, and Schramek D.
+              <span class="pub-title">Genome-wide CRISPR screens identify novel regulator of wild-type and mutant p53 stability.</span>
+              <span class="pub-journal">Molecular Systems Biology.</span>
+              <span class="pub-year">2024.</span>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -116,13 +172,23 @@
             Toronto, Ontario, Canada M5S 3E1
           </div>
         </div>
-        <ul class="footer-nav">
-          <li><a href="research.html">Research</a></li>
-          <li><a href="our-team.html">Our Team</a></li>
-          <li><a href="lab-news.html">Lab News</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="footer-right">
+          <ul class="footer-nav">
+            <li><a href="research.html">Research</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="lab-news.html">Lab News</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="footer-logos">
+            <a href="https://www.utoronto.ca" target="_blank" rel="noopener" class="footer-logo-link footer-logo-link--invert">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/UofT_Wordmark.png" alt="University of Toronto">
+            </a>
+            <a href="https://thedonnellycentre.utoronto.ca" target="_blank" rel="noopener" class="footer-logo-link">
+              <img src="https://thedonnellycentre.utoronto.ca/sites/default/files/assets/logo/DonnellyLogo.png" alt="Donnelly Centre for Cellular and Biomolecular Research">
+            </a>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom">
         &copy; 2026 Al-Zahrani Lab &mdash; University of Toronto
@@ -131,12 +197,224 @@
   </footer>
 
   <script>
-    document.getElementById('mobile-toggle').addEventListener('click', function() {
-      document.getElementById('mobile-nav').classList.toggle('open');
-    });
-    window.addEventListener('scroll', function() {
+    (function () {
+      var toggle = document.getElementById('mobile-toggle');
+      var nav = document.getElementById('mobile-nav');
+      if (!toggle || !nav) return;
+
+      function setNavOpen(open) {
+        nav.classList.toggle('open', open);
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+
+      toggle.addEventListener('click', function () {
+        setNavOpen(!nav.classList.contains('open'));
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setNavOpen(false);
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768 && nav.classList.contains('open')) {
+          setNavOpen(false);
+        }
+      });
+    })();
+    window.addEventListener('scroll', function () {
       document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 10);
     });
+  </script>
+
+  <script>
+    (function () {
+      var canvas = document.getElementById('hero-canvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      var dpr = window.devicePixelRatio || 1;
+      var w, h;
+      var time = 0;
+      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      function resize() {
+        var rect = canvas.parentElement.getBoundingClientRect();
+        w = rect.width;
+        h = rect.height;
+        canvas.width = w * dpr;
+        canvas.height = h * dpr;
+        canvas.style.width = w + 'px';
+        canvas.style.height = h + 'px';
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      }
+
+      resize();
+      window.addEventListener('resize', resize);
+
+      var particles = [];
+      var particleCount = 50;
+      for (var i = 0; i < particleCount; i++) {
+        particles.push({
+          x: Math.random(),
+          y: Math.random(),
+          vx: (Math.random() - 0.5) * 0.00025,
+          vy: (Math.random() - 0.5) * 0.00025,
+          r: Math.random() * 1.8 + 0.6,
+          opacity: Math.random() * 0.15 + 0.05
+        });
+      }
+
+      function drawHelix(cx, cy, amplitude, length, phase, color, lineWidth) {
+        var steps = 120;
+
+        ctx.beginPath();
+        for (var i = 0; i <= steps; i++) {
+          var t = i / steps;
+          var yOff = (t - 0.5) * length;
+          var xOff = Math.sin(t * Math.PI * 4 + phase) * amplitude;
+          if (i === 0) ctx.moveTo(cx + xOff, cy + yOff);
+          else ctx.lineTo(cx + xOff, cy + yOff);
+        }
+        ctx.strokeStyle = color;
+        ctx.lineWidth = lineWidth;
+        ctx.stroke();
+
+        ctx.beginPath();
+        for (var i = 0; i <= steps; i++) {
+          var t = i / steps;
+          var yOff = (t - 0.5) * length;
+          var xOff = Math.sin(t * Math.PI * 4 + phase + Math.PI) * amplitude;
+          if (i === 0) ctx.moveTo(cx + xOff, cy + yOff);
+          else ctx.lineTo(cx + xOff, cy + yOff);
+        }
+        ctx.strokeStyle = color;
+        ctx.lineWidth = lineWidth;
+        ctx.stroke();
+
+        for (var i = 0; i <= steps; i += 6) {
+          var t = i / steps;
+          var yOff = (t - 0.5) * length;
+          var sin1 = Math.sin(t * Math.PI * 4 + phase);
+          var sin2 = Math.sin(t * Math.PI * 4 + phase + Math.PI);
+          if (sin1 > sin2) {
+            ctx.beginPath();
+            ctx.moveTo(cx + sin1 * amplitude, cy + yOff);
+            ctx.lineTo(cx + sin2 * amplitude, cy + yOff);
+            ctx.strokeStyle = color;
+            ctx.lineWidth = lineWidth * 0.4;
+            ctx.stroke();
+          }
+        }
+      }
+
+      function drawChromosome(cx, cy, scale, rotation, opacity) {
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.rotate(rotation);
+        ctx.globalAlpha = opacity;
+
+        var armLen = 40 * scale;
+        var armW = 8 * scale;
+        var gap = 3 * scale;
+
+        ctx.beginPath();
+        ctx.ellipse(0, -(gap + armLen / 2), armW, armLen / 2, 0, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(139, 38, 53, 0.18)';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.ellipse(0, (gap + armLen / 2), armW, armLen / 2, 0, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(139, 38, 53, 0.18)';
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.ellipse(0, 0, armW * 0.6, gap * 1.2, 0, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(139, 38, 53, 0.1)';
+        ctx.fill();
+
+        ctx.globalAlpha = 1;
+        ctx.restore();
+      }
+
+      function draw() {
+        if (reducedMotion) {
+          time = 0;
+        } else {
+          time += 0.003;
+        }
+
+        ctx.clearRect(0, 0, w, h);
+
+        ctx.fillStyle = '#f5f4f1';
+        ctx.fillRect(0, 0, w, h);
+
+        for (var i = 0; i < particles.length; i++) {
+          var p = particles[i];
+          if (!reducedMotion) {
+            p.x += p.vx;
+            p.y += p.vy;
+            if (p.x < 0 || p.x > 1) p.vx *= -1;
+            if (p.y < 0 || p.y > 1) p.vy *= -1;
+          }
+          ctx.beginPath();
+          ctx.arc(p.x * w, p.y * h, p.r, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(26, 26, 26, ' + p.opacity + ')';
+          ctx.fill();
+        }
+
+        var connectionDist = 130;
+        ctx.lineWidth = 0.5;
+        for (var i = 0; i < particles.length; i++) {
+          for (var j = i + 1; j < particles.length; j++) {
+            var dx = (particles[i].x - particles[j].x) * w;
+            var dy = (particles[i].y - particles[j].y) * h;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            if (dist < connectionDist) {
+              var alpha = (1 - dist / connectionDist) * 0.06;
+              ctx.beginPath();
+              ctx.moveTo(particles[i].x * w, particles[i].y * h);
+              ctx.lineTo(particles[j].x * w, particles[j].y * h);
+              ctx.strokeStyle = 'rgba(26, 26, 26, ' + alpha + ')';
+              ctx.stroke();
+            }
+          }
+        }
+
+        drawHelix(
+          w * 0.8,
+          h * 0.5,
+          w * 0.035,
+          h * 1.1,
+          time * 1.5,
+          'rgba(139, 38, 53, 0.14)',
+          1.2
+        );
+
+        drawHelix(
+          w * 0.12,
+          h * 0.45,
+          w * 0.02,
+          h * 0.65,
+          time * 1.2 + 2,
+          'rgba(26, 26, 26, 0.05)',
+          0.8
+        );
+
+        drawChromosome(w * 0.9, h * 0.22, 0.9 + Math.sin(time) * 0.05, 0.3 + Math.sin(time * 0.5) * 0.05, 0.5);
+        drawChromosome(w * 0.06, h * 0.78, 0.7 + Math.sin(time + 1) * 0.04, -0.4 + Math.sin(time * 0.7) * 0.04, 0.35);
+        drawChromosome(w * 0.68, h * 0.12, 0.5, 0.8 + Math.sin(time * 0.3) * 0.03, 0.2);
+        drawChromosome(w * 0.32, h * 0.88, 0.6, -0.2 + Math.sin(time * 0.6) * 0.03, 0.25);
+
+        if (!reducedMotion) {
+          requestAnimationFrame(draw);
+        }
+      }
+
+      draw();
+    })();
   </script>
 </body>
 </html>

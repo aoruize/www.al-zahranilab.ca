@@ -27,7 +27,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+      <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -52,7 +52,7 @@
       <div class="hero-overlay"></div>
     </div>
     <div class="hero-content">
-      <h1 class="hero-title">Our Research</h1>
+      <h1 class="hero-title">Research</h1>
     </div>
   </section>
 
@@ -61,7 +61,6 @@
     <div class="container">
       <div class="research-grid">
 
-        <!-- Pillar 1 -->
         <div class="research-card">
           <img
             class="research-card-img"
@@ -69,7 +68,7 @@
             alt="Functional genomics tools diagram"
           >
           <div class="research-card-body">
-            <span class="research-card-number">1</span>
+            <span class="research-card-number">Focus Area 01</span>
             <h3 class="research-card-title">Creating New Functional Genomics Tools</h3>
             <p class="research-card-text">
               We strive to create new functional genomics approaches to investigate disease biology at scale. Our previous work developed new tools for CRISPR-based multiplexing and we are currently adapting these types of approaches to study the causes and consequences of both genetic and transcriptional heterogeneity in cancer.
@@ -77,7 +76,6 @@
           </div>
         </div>
 
-        <!-- Pillar 2 -->
         <div class="research-card">
           <img
             class="research-card-img"
@@ -85,7 +83,7 @@
             alt="Mouse models diagram"
           >
           <div class="research-card-body">
-            <span class="research-card-number">2</span>
+            <span class="research-card-number">Focus Area 02</span>
             <h3 class="research-card-title">Developing Mouse Models of Disease</h3>
             <p class="research-card-text">
               We aim to develop new mouse models of cancer and disease that are amenable to functional interrogation through direct <em>in vivo</em> genetic manipulation. Currently our lab focuses on identifying the earliest drivers of brain, breast, and ovarian cancers by genetically manipulating cells within their native environment.
@@ -93,7 +91,6 @@
           </div>
         </div>
 
-        <!-- Pillar 3 -->
         <div class="research-card">
           <img
             class="research-card-img"
@@ -101,7 +98,7 @@
             alt="Aneuploidy and cancer diagram"
           >
           <div class="research-card-body">
-            <span class="research-card-number">3</span>
+            <span class="research-card-number">Focus Area 03</span>
             <h3 class="research-card-title">Investigating How Aneuploidy Drives Cancer</h3>
             <p class="research-card-text">
               Our previous work identified that chromosomal arm-level gains and losses harbour distinct cancer-driving events. One of our major goals is to combine our new functional genomics tools with mouse models of cancer to investigate how other types of common chromosomal and transcriptional heterogeneities drive cancer and can be targeted therapeutically.
@@ -125,13 +122,23 @@
             Toronto, Ontario, Canada M5S 3E1
           </div>
         </div>
-        <ul class="footer-nav">
-          <li><a href="research.html">Research</a></li>
-          <li><a href="our-team.html">Our Team</a></li>
-          <li><a href="lab-news.html">Lab News</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="footer-right">
+          <ul class="footer-nav">
+            <li><a href="research.html">Research</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="lab-news.html">Lab News</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="footer-logos">
+            <a href="https://www.utoronto.ca" target="_blank" rel="noopener" class="footer-logo-link footer-logo-link--invert">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/UofT_Wordmark.png" alt="University of Toronto">
+            </a>
+            <a href="https://thedonnellycentre.utoronto.ca" target="_blank" rel="noopener" class="footer-logo-link">
+              <img src="https://thedonnellycentre.utoronto.ca/sites/default/files/assets/logo/DonnellyLogo.png" alt="Donnelly Centre for Cellular and Biomolecular Research">
+            </a>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom">
         &copy; 2026 Al-Zahrani Lab &mdash; University of Toronto
@@ -140,10 +147,35 @@
   </footer>
 
   <script>
-    document.getElementById('mobile-toggle').addEventListener('click', function() {
-      document.getElementById('mobile-nav').classList.toggle('open');
-    });
-    window.addEventListener('scroll', function() {
+    (function () {
+      var toggle = document.getElementById('mobile-toggle');
+      var nav = document.getElementById('mobile-nav');
+      if (!toggle || !nav) return;
+
+      function setNavOpen(open) {
+        nav.classList.toggle('open', open);
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+
+      toggle.addEventListener('click', function () {
+        setNavOpen(!nav.classList.contains('open'));
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setNavOpen(false);
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768 && nav.classList.contains('open')) {
+          setNavOpen(false);
+        }
+      });
+    })();
+    window.addEventListener('scroll', function () {
       document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 10);
     });
   </script>

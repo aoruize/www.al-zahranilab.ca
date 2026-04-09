@@ -6,6 +6,7 @@
   <title>Contact &mdash; Al-Zahrani Lab</title>
   <meta name="description" content="Contact the Al-Zahrani Lab at the Donnelly Centre, University of Toronto. Opportunities for postdocs, graduate students, and undergraduates.">
   <meta property="og:title" content="Contact — Al-Zahrani Lab">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap">
@@ -26,7 +27,7 @@
           <li><a href="contact.html" class="active">Contact</a></li>
         </ul>
       </nav>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+      <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -110,13 +111,23 @@
             Toronto, Ontario, Canada M5S 3E1
           </div>
         </div>
-        <ul class="footer-nav">
-          <li><a href="research.html">Research</a></li>
-          <li><a href="our-team.html">Our Team</a></li>
-          <li><a href="lab-news.html">Lab News</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="footer-right">
+          <ul class="footer-nav">
+            <li><a href="research.html">Research</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="lab-news.html">Lab News</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="footer-logos">
+            <a href="https://www.utoronto.ca" target="_blank" rel="noopener" class="footer-logo-link footer-logo-link--invert">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/UofT_Wordmark.png" alt="University of Toronto">
+            </a>
+            <a href="https://thedonnellycentre.utoronto.ca" target="_blank" rel="noopener" class="footer-logo-link">
+              <img src="https://thedonnellycentre.utoronto.ca/sites/default/files/assets/logo/DonnellyLogo.png" alt="Donnelly Centre for Cellular and Biomolecular Research">
+            </a>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom">
         &copy; 2026 Al-Zahrani Lab &mdash; University of Toronto
@@ -125,10 +136,35 @@
   </footer>
 
   <script>
-    document.getElementById('mobile-toggle').addEventListener('click', function() {
-      document.getElementById('mobile-nav').classList.toggle('open');
-    });
-    window.addEventListener('scroll', function() {
+    (function () {
+      var toggle = document.getElementById('mobile-toggle');
+      var nav = document.getElementById('mobile-nav');
+      if (!toggle || !nav) return;
+
+      function setNavOpen(open) {
+        nav.classList.toggle('open', open);
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+
+      toggle.addEventListener('click', function () {
+        setNavOpen(!nav.classList.contains('open'));
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setNavOpen(false);
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768 && nav.classList.contains('open')) {
+          setNavOpen(false);
+        }
+      });
+    })();
+    window.addEventListener('scroll', function () {
       document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 10);
     });
   </script>

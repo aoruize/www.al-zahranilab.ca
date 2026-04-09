@@ -6,6 +6,7 @@
   <title>Our Team &mdash; Al-Zahrani Lab</title>
   <meta name="description" content="Meet the team at the Al-Zahrani Lab, Donnelly Centre, University of Toronto.">
   <meta property="og:title" content="Our Team — Al-Zahrani Lab">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap">
@@ -26,7 +27,7 @@
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
-      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+      <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
           <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -55,18 +56,28 @@
     </div>
   </section>
 
-  <!-- Team Members -->
+  <!-- Principal Investigator -->
   <section class="section">
     <div class="container">
-      <div class="team-grid">
-
-        <div class="team-card">
-          <img class="team-photo" src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/f4f40ecd-6116-483b-9e97-9c2ead0c5433/DSC01070.jpg" alt="Khalid Al-Zahrani">
-          <h3 class="team-name">Khalid Al-Zahrani</h3>
-          <div class="team-role">Assistant Professor</div>
-          <div class="team-hometown"><svg class="icon-hometown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"/></svg> Montrose, Scotland</div>
-          <p class="team-interests">Functional Genomics and Mouse Models of Disease</p>
+      <div class="team-section-pi">
+        <img class="team-pi-photo" src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/f4f40ecd-6116-483b-9e97-9c2ead0c5433/DSC01070.jpg" alt="Khalid Al-Zahrani">
+        <div class="team-pi-info">
+          <div class="team-pi-role">Principal Investigator</div>
+          <h2>Khalid Al-Zahrani</h2>
+          <div class="team-pi-hometown">
+            <svg class="icon-hometown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"/></svg>
+            Montrose, Scotland
+          </div>
+          <p class="team-pi-interests">Khalid is an Assistant Professor at the Donnelly Centre for Cellular and Biomolecular Research, University of Toronto. His research focuses on developing and applying functional genomics tools and mouse models to understand how large-scale chromosomal alterations drive tumourigenesis.</p>
         </div>
+      </div>
+
+      <!-- Lab Members -->
+      <div class="section-header">
+        <span class="section-label">Current Members</span>
+      </div>
+
+      <div class="team-grid">
 
         <div class="team-card">
           <img class="team-photo" style="object-position: top" src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/1e2cffc1-8527-4a69-91dc-9f7525db722c/Suzy-Fam-9-6-2025-617.jpg" alt="Suzy Prosser">
@@ -85,9 +96,7 @@
         </div>
 
         <div class="team-card">
-          <div style="width: 160px; height: 160px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px; border: 4px solid var(--color-bg-section); box-sizing: content-box">
-            <img style="width: 100%; height: 100%; object-fit: cover; object-position: center 15%; transform: scale(1.3); transform-origin: center 30%" src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/0c25b16c-445f-43ea-8eb3-37bd2a4ce754/eleanore-labwebsite2.jpg" alt="Eleanore Yinuo Lin">
-          </div>
+          <img class="team-photo" style="object-fit: cover; object-position: center 15%" src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/0c25b16c-445f-43ea-8eb3-37bd2a4ce754/eleanore-labwebsite2.jpg" alt="Eleanore Yinuo Lin">
           <h3 class="team-name">Eleanore Yinuo Lin</h3>
           <div class="team-role">PhD Candidate</div>
           <div class="team-hometown"><svg class="icon-hometown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"/></svg> Toronto, Canada &amp; Suzhou, China</div>
@@ -117,7 +126,7 @@
   <!-- Lab Pets -->
   <section class="section section--alt">
     <div class="container">
-      <div class="section-header text-center">
+      <div class="section-header">
         <span class="section-label">Beyond the Bench</span>
         <h2 class="section-title">Our Favourite Friends</h2>
       </div>
@@ -167,13 +176,23 @@
             Toronto, Ontario, Canada M5S 3E1
           </div>
         </div>
-        <ul class="footer-nav">
-          <li><a href="research.html">Research</a></li>
-          <li><a href="our-team.html">Our Team</a></li>
-          <li><a href="lab-news.html">Lab News</a></li>
-          <li><a href="publications.html">Publications</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <div class="footer-right">
+          <ul class="footer-nav">
+            <li><a href="research.html">Research</a></li>
+            <li><a href="our-team.html">Our Team</a></li>
+            <li><a href="lab-news.html">Lab News</a></li>
+            <li><a href="publications.html">Publications</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <div class="footer-logos">
+            <a href="https://www.utoronto.ca" target="_blank" rel="noopener" class="footer-logo-link footer-logo-link--invert">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/UofT_Wordmark.png" alt="University of Toronto">
+            </a>
+            <a href="https://thedonnellycentre.utoronto.ca" target="_blank" rel="noopener" class="footer-logo-link">
+              <img src="https://thedonnellycentre.utoronto.ca/sites/default/files/assets/logo/DonnellyLogo.png" alt="Donnelly Centre for Cellular and Biomolecular Research">
+            </a>
+          </div>
+        </div>
       </div>
       <div class="footer-bottom">
         &copy; 2026 Al-Zahrani Lab &mdash; University of Toronto
@@ -182,10 +201,35 @@
   </footer>
 
   <script>
-    document.getElementById('mobile-toggle').addEventListener('click', function() {
-      document.getElementById('mobile-nav').classList.toggle('open');
-    });
-    window.addEventListener('scroll', function() {
+    (function () {
+      var toggle = document.getElementById('mobile-toggle');
+      var nav = document.getElementById('mobile-nav');
+      if (!toggle || !nav) return;
+
+      function setNavOpen(open) {
+        nav.classList.toggle('open', open);
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+
+      toggle.addEventListener('click', function () {
+        setNavOpen(!nav.classList.contains('open'));
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setNavOpen(false);
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768 && nav.classList.contains('open')) {
+          setNavOpen(false);
+        }
+      });
+    })();
+    window.addEventListener('scroll', function () {
       document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 10);
     });
   </script>
