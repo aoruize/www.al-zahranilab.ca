@@ -24,7 +24,7 @@
 
   --font-heading: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Fira Mono', Menlo, monospace;
+  --font-mono: 'IBM Plex Mono', 'Courier New', Courier, monospace;
 
   --max-width: 1200px;
   --max-width-narrow: 720px;
