@@ -466,11 +466,11 @@ p:last-child {
 }
 
 .pillar-card {
-  border-radius: 12px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   background: var(--color-white);
+  border: 1px solid var(--color-border-light);
 }
 
 .pillar-img {
@@ -713,7 +713,7 @@ p:last-child {
 
 .pub-card {
   background: var(--color-bg-section);
-  border-radius: 12px;
+  border: 1px solid var(--color-border-light);
   padding: 32px;
   display: flex;
   flex-direction: column;
