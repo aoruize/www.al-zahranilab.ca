@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lab News &mdash; Al-Zahrani Lab</title>
+  <meta name="description" content="Latest news and updates from the Al-Zahrani Lab at the University of Toronto.">
+  <meta property="og:title" content="Lab News — Al-Zahrani Lab">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">Al-Zahrani Lab</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="research.html">Research</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="lab-news.html" class="active">Lab News</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <button class="mobile-toggle" id="mobile-toggle" aria-label="Open menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="index.html">Home</a>
+    <a href="research.html">Research</a>
+    <a href="our-team.html">Our Team</a>
+    <a href="lab-news.html" class="active">Lab News</a>
+    <a href="publications.html">Publications</a>
+    <a href="contact.html">Contact</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero hero--page">
+    <div class="hero-bg">
+      <img src="https://images.squarespace-cdn.com/content/v1/69a884276a596b25135ae731/5219b9af-20ee-41d1-a890-0d0cf0ddd2fb/donnellybuilding-06_0.jpg" alt="Donnelly Centre building">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Lab News</h1>
+    </div>
+  </section>
+
+  <!-- News Timeline -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="news-list">
+
+        <div class="news-item">
+          <div class="news-date">February 2026</div>
+          <div class="news-body">
+            Welcome <strong>Olivia Costanzo</strong> to the lab for Spring and Summer as a Research Assistant!
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">December 2025</div>
+          <div class="news-body">
+            Thanks to our rotation students for all their hard work! We also welcome our first three graduate students &mdash; <strong>Jade</strong>, <strong>Adele</strong>, and <strong>Eleanore</strong> &mdash; who will officially join the lab.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">November 2025</div>
+          <div class="news-body">
+            Welcome <strong>Dr. Suzy Prosser</strong> as our Senior Research Associate!
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">November 2025</div>
+          <div class="news-body">
+            Welcome rotation students <strong>Josh</strong> and <strong>Eleanore</strong> to the lab.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">October 2025</div>
+          <div class="news-body">
+            Welcome rotation students <strong>Naomi</strong> and <strong>Adele</strong> to the lab.
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">September 2025</div>
+          <div class="news-body">
+            Welcome <strong>Jade</strong> and <strong>Justin</strong> &mdash; the lab's first rotation students!
+          </div>
+        </div>
+
+        <div class="news-item">
+          <div class="news-date">September 2025</div>
+          <div class="news-body">
+            The Al-Zahrani Lab has officially opened at the Donnelly Centre!
+            <a href="https://thedonnellycentre.utoronto.ca/news/how-donnelly-centres-newest-scientist-will-shape-his-space" target="_blank" rel="noopener">Check out how we got here &rarr;</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-brand">Al-Zahrani Lab</div>
+          <div class="footer-address">
+            Donnelly Centre for Cellular and Biomolecular Research<br>
+            160 College Street, Room 350<br>
+            Toronto, Ontario, Canada M5S 3E1
+          </div>
+        </div>
+        <ul class="footer-nav">
+          <li><a href="research.html">Research</a></li>
+          <li><a href="our-team.html">Our Team</a></li>
+          <li><a href="lab-news.html">Lab News</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Al-Zahrani Lab &mdash; University of Toronto
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-toggle').addEventListener('click', function() {
+      document.getElementById('mobile-nav').classList.toggle('open');
+    });
+    window.addEventListener('scroll', function() {
+      document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>
