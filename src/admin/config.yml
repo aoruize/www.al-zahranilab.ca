@@ -1,0 +1,73 @@
+backend:
+  name: github
+  repo: al-zahranilab/www.al-zahranilab.ca
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+
+collections:
+  - name: "publications"
+    label: "Publications"
+    folder: "src/publications"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Journal", name: "journal", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", value_type: "int" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Authors", name: "authors", widget: "text" }
+      - { label: "URL", name: "url", widget: "string", required: false }
+      - { label: "Sort Order", name: "order", widget: "number", value_type: "int" }
+
+  - name: "team"
+    label: "Team Members"
+    folder: "src/team"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Role", name: "role", widget: "string" }
+      - { label: "Hometown", name: "hometown", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Photo Position (CSS)", name: "photoPosition", widget: "string", required: false, hint: "e.g. 'top', 'center 15%'" }
+      - { label: "Research Interests", name: "interests", widget: "text" }
+      - { label: "Sort Order", name: "order", widget: "number", value_type: "int" }
+      - { label: "Is Principal Investigator?", name: "isPI", widget: "boolean", default: false }
+
+  - name: "pets"
+    label: "Lab Pets"
+    folder: "src/pets"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Photo", name: "photo", widget: "image" }
+      - { label: "Sort Order", name: "order", widget: "number", value_type: "int" }
+
+  - name: "news"
+    label: "Lab News"
+    folder: "src/news"
+    create: true
+    slug: "{{year}}-{{month}}-{{slug}}"
+    fields:
+      - { label: "Date", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Display Date", name: "displayDate", widget: "string", hint: "e.g. 'February 2026'" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "research"
+    label: "Research Areas"
+    folder: "src/research"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Focus Area Number", name: "number", widget: "string", hint: "e.g. '01', '02'" }
+      - { label: "Research Page Image", name: "image", widget: "image" }
+      - { label: "Research Page Image Alt", name: "imageAlt", widget: "string" }
+      - { label: "Home Page Pillar Image", name: "pillarImage", widget: "image" }
+      - { label: "Home Page Pillar Image Alt", name: "pillarImageAlt", widget: "string" }
+      - { label: "Home Page Pillar Title", name: "pillarTitle", widget: "string" }
+      - { label: "Home Page Pillar Text", name: "pillarText", widget: "text" }
+      - { label: "Sort Order", name: "order", widget: "number", value_type: "int" }
+      - { label: "Full Description", name: "body", widget: "markdown" }

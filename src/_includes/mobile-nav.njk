@@ -1,0 +1,6 @@
+<div class="mobile-nav" id="mobile-nav">
+  <a href="/"{% if navKey == "home" %} class="active"{% endif %}>Home</a>
+  {%- for item in site.nav %}
+  <a href="{{ item.url }}"{% if navKey == item.key %} class="active"{% endif %}>{{ item.label }}</a>
+  {%- endfor %}
+</div>

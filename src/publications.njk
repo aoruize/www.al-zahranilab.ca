@@ -1,0 +1,40 @@
+---
+layout: base.njk
+navKey: publications
+pageTitle: "Publications — Al-Zahrani Lab"
+pageDescription: "Publications from the Al-Zahrani Lab at the University of Toronto."
+ogTitle: "Publications — Al-Zahrani Lab"
+permalink: /publications/index.html
+---
+
+<!-- Hero -->
+  <section class="hero hero--page">
+    <div class="hero-bg">
+      <img src="/images/publications-banner.jpg" alt="Library books and academic research">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Publications</h1>
+    </div>
+  </section>
+
+  <!-- Publications List -->
+  <section class="section">
+    <div class="container">
+      <div class="pub-list">
+        {%- for pub in collections.publications %}
+        <div class="pub-card">
+          <div class="pub-meta">
+            <span class="pub-journal">{{ pub.data.journal | safe }}</span>
+            <span class="pub-year">{{ pub.data.year }}</span>
+          </div>
+          <h3 class="pub-title">{{ pub.data.title | safe }}</h3>
+          <p class="pub-authors">{{ pub.data.authors | safe }}</p>
+          {%- if pub.data.url %}
+          <a href="{{ pub.data.url }}" target="_blank" rel="noopener" class="pub-link">Read <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M7 17L17 7M17 7H7M17 7v10"/></svg></a>
+          {%- endif %}
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>

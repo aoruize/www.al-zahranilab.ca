@@ -1,0 +1,19 @@
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="/" class="site-logo">Al-Zahrani Lab</a>
+    <nav>
+      <ul class="nav-links">
+        {%- for item in site.nav %}
+        <li><a href="{{ item.url }}"{% if navKey == item.key %} class="active"{% endif %}>{{ item.label }}</a></li>
+        {%- endfor %}
+      </ul>
+    </nav>
+    <button type="button" class="mobile-toggle" id="mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+      <span class="hamburger-bars">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </span>
+    </button>
+  </div>
+</header>

@@ -1,0 +1,76 @@
+---
+layout: base.njk
+navKey: our-team
+pageTitle: "Our Team — Al-Zahrani Lab"
+pageDescription: "Meet the team at the Al-Zahrani Lab, Donnelly Centre, University of Toronto."
+ogTitle: "Our Team — Al-Zahrani Lab"
+permalink: /our-team/index.html
+---
+
+<!-- Hero -->
+  <section class="hero hero--page">
+    <div class="hero-bg">
+      <img src="/images/team-banner.jpg" alt="Research scientists working in the laboratory">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Our Team</h1>
+    </div>
+  </section>
+
+  <!-- Principal Investigator -->
+  <section class="section">
+    <div class="container">
+      {%- for member in collections.team | where("isPI", true) %}
+      <div class="team-section-pi">
+        <img class="team-pi-photo" src="{{ member.data.photo }}" alt="{{ member.data.name }}">
+        <div class="team-pi-info">
+          <div class="team-pi-role">{{ member.data.role }}</div>
+          <h2>{{ member.data.name }}</h2>
+          <div class="team-pi-hometown">
+            <svg class="icon-hometown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"/></svg>
+            {{ member.data.hometown }}
+          </div>
+          <p class="team-pi-interests">{{ member.data.interests }}</p>
+        </div>
+      </div>
+      {%- endfor %}
+
+      <!-- Lab Members -->
+      <div class="section-header">
+        <span class="section-label">Current Members</span>
+        <h2 class="section-title">The Team</h2>
+      </div>
+
+      <div class="team-grid">
+        {%- for member in collections.team | whereNot("isPI", true) %}
+        <div class="team-card">
+          <img class="team-photo"{% if member.data.photoPosition %} style="object-position: {{ member.data.photoPosition }}"{% endif %} src="{{ member.data.photo }}" alt="{{ member.data.name }}">
+          <h3 class="team-name">{{ member.data.name }}</h3>
+          <div class="team-role">{{ member.data.role }}</div>
+          <div class="team-hometown"><svg class="icon-hometown" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12l9-9 9 9"/><path d="M5 10v10a1 1 0 001 1h3v-6h6v6h3a1 1 0 001-1V10"/></svg> {{ member.data.hometown | safe }}</div>
+          <p class="team-interests">{{ member.data.interests | safe }}</p>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Lab Pets -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Beyond the Bench</span>
+        <h2 class="section-title">Our Favourite Friends</h2>
+      </div>
+
+      <div class="pets-grid">
+        {%- for pet in collections.pets %}
+        <div class="pet-card">
+          <img class="pet-photo" src="{{ pet.data.photo }}" alt="{{ pet.data.name }}">
+          <div class="pet-name">{{ pet.data.name | safe }}</div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>

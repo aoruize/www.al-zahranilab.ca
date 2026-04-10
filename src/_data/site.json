@@ -1,0 +1,18 @@
+{
+  "title": "Al-Zahrani Lab",
+  "description": "Functional Genomics Research Lab at The University of Toronto — Donnelly Centre for Cellular and Biomolecular Research",
+  "url": "https://www.al-zahranilab.ca",
+  "address": {
+    "line1": "Donnelly Centre for Cellular and Biomolecular Research",
+    "line2": "160 College Street, Room 350",
+    "line3": "Toronto, Ontario, Canada M5S 3E1"
+  },
+  "email": "khalid.alzahrani@utoronto.ca",
+  "nav": [
+    { "label": "Research", "url": "/research/", "key": "research" },
+    { "label": "Our Team", "url": "/our-team/", "key": "our-team" },
+    { "label": "Lab News", "url": "/lab-news/", "key": "lab-news" },
+    { "label": "Publications", "url": "/publications/", "key": "publications" },
+    { "label": "Contact", "url": "/contact/", "key": "contact" }
+  ]
+}

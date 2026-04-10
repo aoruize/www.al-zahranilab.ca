@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ pageTitle | default(site.title) }}</title>
+  <meta name="description" content="{{ pageDescription | default(site.description) }}">
+  <meta property="og:title" content="{{ ogTitle | default(pageTitle) | default(site.title) }}">
+  <meta property="og:description" content="{{ pageDescription | default(site.description) }}">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/social-preview.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="/social-preview.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap">
+  <link rel="stylesheet" href="/styles.css?v=2">
+</head>
+<body>
+
+  {% include "header.njk" %}
+  {% include "mobile-nav.njk" %}
+
+  {{ content | safe }}
+
+  {% include "footer.njk" %}
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('mobile-toggle');
+      var nav = document.getElementById('mobile-nav');
+      if (!toggle || !nav) return;
+
+      function updateBlobOrigin() {
+        var rect = toggle.getBoundingClientRect();
+        nav.style.setProperty('--blob-x', (rect.left + rect.width / 2) + 'px');
+        nav.style.setProperty('--blob-y', (rect.top + rect.height / 2) + 'px');
+      }
+
+      function setNavOpen(open) {
+        if (open) updateBlobOrigin();
+        nav.classList.toggle('open', open);
+        document.body.classList.toggle('nav-open', open);
+        toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+      }
+
+      toggle.addEventListener('click', function () {
+        setNavOpen(!nav.classList.contains('open'));
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('open')) {
+          setNavOpen(false);
+        }
+      });
+
+      window.addEventListener('resize', function () {
+        if (window.innerWidth > 768 && nav.classList.contains('open')) {
+          setNavOpen(false);
+        }
+      });
+    })();
+    window.addEventListener('scroll', function () {
+      document.getElementById('site-header').classList.toggle('scrolled', window.scrollY > 10);
+    });
+  </script>
+</body>
+</html>

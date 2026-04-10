@@ -1,0 +1,43 @@
+---
+layout: base.njk
+navKey: research
+pageTitle: "Research — Al-Zahrani Lab"
+pageDescription: "Research at the Al-Zahrani Lab — Functional genomics, mouse models of disease, and aneuploidy in cancer."
+ogTitle: "Research — Al-Zahrani Lab"
+permalink: /research/index.html
+---
+
+<!-- Hero -->
+  <section class="hero hero--page">
+    <div class="hero-bg">
+      <img src="/images/research-hero.jpeg" alt="Research whiteboard" style="object-position: center 35%;">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Research</h1>
+    </div>
+  </section>
+
+  <!-- Research Areas -->
+  <section class="section">
+    <div class="container">
+      <div class="research-grid">
+        {%- for item in collections.research %}
+        <div class="research-card">
+          <img
+            class="research-card-img"
+            src="{{ item.data.image }}"
+            alt="{{ item.data.imageAlt }}"
+          >
+          <div class="research-card-body">
+            <span class="research-card-number">Focus Area {{ item.data.number }}</span>
+            <h3 class="research-card-title">{{ item.data.title }}</h3>
+            <div class="research-card-text">
+              {{ item.content | safe }}
+            </div>
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>

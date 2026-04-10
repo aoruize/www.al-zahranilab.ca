@@ -1,0 +1,32 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">Al-Zahrani Lab</div>
+        <div class="footer-address">
+          {{ site.address.line1 }}<br>
+          {{ site.address.line2 }}<br>
+          {{ site.address.line3 }}
+        </div>
+      </div>
+      <div class="footer-right">
+        <ul class="footer-nav">
+          {%- for item in site.nav %}
+          <li><a href="{{ item.url }}">{{ item.label }}</a></li>
+          {%- endfor %}
+        </ul>
+        <div class="footer-logos">
+          <a href="https://thedonnellycentre.utoronto.ca" target="_blank" rel="noopener" class="footer-logo-link">
+            <img src="https://thedonnellycentre.utoronto.ca/sites/default/files/assets/logo/DonnellyLogo.png" alt="Donnelly Centre for Cellular and Biomolecular Research">
+          </a>
+          <a href="https://www.utoronto.ca" target="_blank" rel="noopener" class="footer-logo-link footer-logo-link--invert">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/UofT_Wordmark.png" alt="University of Toronto">
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Al-Zahrani Lab &mdash; University of Toronto
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,35 @@
+---
+layout: base.njk
+navKey: lab-news
+pageTitle: "Lab News — Al-Zahrani Lab"
+pageDescription: "Latest news and updates from the Al-Zahrani Lab at the University of Toronto."
+ogTitle: "Lab News — Al-Zahrani Lab"
+permalink: /lab-news/index.html
+---
+
+<!-- Hero -->
+  <section class="hero hero--page">
+    <div class="hero-bg">
+      <img src="/images/news-hero.jpg" alt="Donnelly Centre building">
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <h1 class="hero-title">Lab News</h1>
+    </div>
+  </section>
+
+  <!-- News Timeline -->
+  <section class="section">
+    <div class="container container--narrow">
+      <div class="news-list">
+        {%- for item in collections.news %}
+        <div class="news-item">
+          <div class="news-date">{{ item.data.displayDate }}</div>
+          <div class="news-body">
+            {{ item.content | safe }}
+          </div>
+        </div>
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
