@@ -1,6 +1,6 @@
 backend:
   name: github
-  repo: al-zahranilab/www.al-zahranilab.ca
+  repo: aoruize/www.al-zahranilab.ca
   branch: main
 
 media_folder: "images"
